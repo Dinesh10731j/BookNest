@@ -2,18 +2,15 @@ import React from 'react';
 import Banner from '@/components/Banner';
 import BookList from '@/components/BookList';
 
-
-const page = () => {
+const Page = () => {
   return (
-   <>
-
-  
-   <Banner/>
-
-   <BookList/>
- 
-   </>
-  )
+    <>
+      <section className='container mx-auto flex flex-col items-center overflow-hidden  p-6'>
+        <Banner />
+        <BookList />
+      </section>
+    </>
+  );
 }
 
-export default page
+export default Page;
