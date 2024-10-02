@@ -20,7 +20,7 @@ const Contact: React.FC = () => {
 
 
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center p-6 bg-gray-100 min-h-screen">
+    <div className="flex flex-col md:flex-row md:gap-7 lg:flex-row items-center justify-center p-6 bg-gray-100 min-h-screen">
       <div className="flex-shrink-0 mb-6 lg:mb-0 lg:mr-6">
         <Image
           src={bookImage}
@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
       </div>
       <div className="flex-1 max-w-md">
         <h1 className="text-4xl font-bold mb-4 text-center lg:text-left">Contact Us</h1>
-        <form className="bg-white p-6 rounded-lg shadow-lg" onSubmit={handleSubmit(onContactSubmit)}>
+        <form className="bg-white h-[500px] w-[400px] p-6 md:w-[500px] md:h-[500px] rounded-lg shadow-lg" onSubmit={handleSubmit(onContactSubmit)}>
           <div className="mb-4">
             <label className="block text-sm font-semibold mb-2" htmlFor="name">Name</label>
             <input
@@ -54,7 +54,13 @@ const Contact: React.FC = () => {
               id="email"
               className="w-full p-2 border border-gray-300 rounded"
               placeholder="Your Email"
-              {...register('email',{required:'E-mail is required'})}
+              {...register('email',{required:'E-mail is required',validate:{
+                validateEmail: (value)=>{
+                  const emailPattern =/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                  return emailPattern.test(value) || 'Please enter a valid email address'
+
+                }
+              }})}
             />
 
             {errors.email && <p className='text-red-700 text-sm'>{errors.email?.message}</p>}
