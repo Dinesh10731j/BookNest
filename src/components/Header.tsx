@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
 <>
-<nav className='flex justify-evenly py-4 px-4 shadow-md sticky w-screen'>
+<nav className='flex justify-evenly py-4 px-4 shadow-md sticky'>
   <div>
     <Image src={CodynnLogo} alt='logo'/>
   </div>
@@ -21,8 +21,14 @@ const Header = () => {
   </div>
 
   <div className='flex gap-7'>
-    <button className='bg-black px-5  py-2 text-white rounded-md border border-red-100 '>Login</button>
-    <button className='bg-black px-5  py-2 text-white rounded-md border border-red-100'>Signup</button>
+  <Link href={'/login'}>
+  <button className='bg-black px-5 pb-3  py-2 text-white rounded-md border border-red-100 '>Login</button>
+  </Link>  
+
+  <Link href={'/signup'}>
+  <button className='bg-black px-5 pb-3  py-2 text-white rounded-md border border-red-100'>Signup</button>
+  </Link>
+   
   </div>
     
 </nav>
