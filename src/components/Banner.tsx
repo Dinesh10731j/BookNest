@@ -10,7 +10,7 @@ const Banner = () => {
 
         <div className='flex justify-evenly bg-gray-950 px-4 py-7 gap-5 items-center shadow-md'>
             <div>
-                <h1 className='text-2xl text-white tracking-tight md:text-4xl text-center'> "A room without books is like a body without a soul." – Cicero</h1>
+                <h1 className='text-2xl text-white tracking-tight md:text-4xl text-center'> A room without books is like a body without a soul. – Cicero</h1>
             </div>
             <div>
 
