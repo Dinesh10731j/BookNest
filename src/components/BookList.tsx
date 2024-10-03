@@ -5,6 +5,9 @@ import Link from 'next/link';
 
 const BookList = () => {
   return (
+
+    <>
+
     <div className='mt-20 text-white mx-auto '> 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {bookInfo.map((book, index) => (
@@ -30,6 +33,9 @@ const BookList = () => {
         ))}
       </div>
     </div>
+    </>
+    
+    
   );
 }
 

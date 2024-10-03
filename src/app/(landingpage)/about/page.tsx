@@ -1,10 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 import bookImg from '../../../assets/book.jpg';
+import Header from '@/components/Header';
 
 const About: React.FC = () => {
-  return (
-    <div className="flex  flex-col lg:flex-row items-center justify-center p-6 bg-gray-100 min-h-screen">
+  return (<>
+  <Header/>
+  <div className="flex  flex-col lg:flex-row items-center justify-center p-6 bg-gray-100 min-h-screen">
+
       <div className="flex-shrink-0 mb-6 lg:mb-0 lg:mr-6">
         <Image
           src={bookImg}
@@ -32,6 +35,8 @@ const About: React.FC = () => {
         </p>
       </div>
     </div>
+  </>
+    
   );
 };
 

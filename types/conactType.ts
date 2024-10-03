@@ -4,3 +4,9 @@ export interface contactType{
     message:string,
 
 }
+
+
+export interface loginType{
+    email:string,
+    password:string
+}
