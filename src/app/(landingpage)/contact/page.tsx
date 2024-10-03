@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import bookImage from '../../../assets/book.jpg';
 import {useForm,SubmitHandler} from "react-hook-form"
-import { contactType } from '../../../../types/conactType';
+import { contactType } from '../../../../types/Type';
 import Header from '@/components/Header';
 
 const Contact: React.FC = () => {

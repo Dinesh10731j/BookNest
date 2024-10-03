@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import bookImage from "../../../assets/book.jpg";
 import Image from 'next/image';
 import {useForm,SubmitHandler} from "react-hook-form";
-import { loginType } from '../../../../types/conactType';
+import { loginType } from '../../../../types/Type';
 
 const Login = () => {
 
