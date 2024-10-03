@@ -4,6 +4,7 @@ import Image from 'next/image';
 import bookImage from '../../../assets/book.jpg';
 import {useForm,SubmitHandler} from "react-hook-form"
 import { contactType } from '../../../../types/conactType';
+import Header from '@/components/Header';
 
 const Contact: React.FC = () => {
 
@@ -20,7 +21,9 @@ const Contact: React.FC = () => {
 
 
   return (
-    <div className="flex flex-col md:flex-row md:gap-7 lg:flex-row items-center justify-center p-6 bg-gray-100 min-h-screen">
+    <>
+    <Header/>
+      <div className="flex flex-col md:flex-row md:gap-7 lg:flex-row items-center justify-center p-6 bg-gray-100 min-h-screen">
       <div className="flex-shrink-0 mb-6 lg:mb-0 lg:mr-6">
         <Image
           src={bookImage}
@@ -85,6 +88,8 @@ const Contact: React.FC = () => {
         </form>
       </div>
     </div>
+    </>
+  
   );
 };
 
