@@ -44,7 +44,7 @@ const Signup = () => {
                   type="text" 
                  
                   className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring focus:ring-blue-300" 
-                  placeholder="Enter your fulname" 
+                  placeholder="Enter your name" 
                   {...register('name',{required:'Name  is required'})}
                 />
                 

@@ -6,19 +6,19 @@ import Header from '@/components/Header';
 const About: React.FC = () => {
   return (<>
   <Header/>
-  <div className="flex  flex-col lg:flex-row items-center justify-center p-6 bg-gray-100 min-h-screen">
+  <div className="flex flex-col lg:flex-row justify-center items-center p-6  min-h-screen">
 
       <div className="flex-shrink-0 mb-6 lg:mb-0 lg:mr-6">
         <Image
           src={bookImg}
           alt="Books"
-          width={400}
+          width={600}
           height={300}
           className="rounded-lg shadow-lg"
         />
       </div>
       <div className="flex-1">
-        <h1 className="text-4xl font-bold mb-4">About Us</h1>
+        <h1 className="text-2xl md:text-4xl font-bold mb-4">About Us</h1>
         <p className="text-lg text-center lg:text-left max-w-2xl mb-6">
           Welcome to our bookstore, where stories come to life! We are passionate about
           connecting readers with the books they love. Our carefully curated selection includes
