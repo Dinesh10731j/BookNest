@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 //import Header from "@/components/Header";
-
+import { ReactQueryProvider } from "./react-query-provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -13,13 +13,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+ 
   return (
     <html lang="en">
       <body
     
       >
-        {/* //<Header/> */}
+        <ReactQueryProvider>
         {children}
+
+        </ReactQueryProvider>
+     
+       
+     
+        {/* //<Header/> */}
+       
       </body>
     </html>
   );
