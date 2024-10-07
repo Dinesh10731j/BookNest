@@ -5,17 +5,19 @@ import bookImage from "../../../assets/book.jpg";
 import Image from 'next/image';
 import {useForm,SubmitHandler} from "react-hook-form";
 import { signupType} from '../../../../types/Type';
+import Link from 'next/link';
+import { UseUserSignup } from '@/hooks/UseSignup';
 
 const Signup = () => {
 
-
+const userSignup = UseUserSignup();
 
 
   const {register,formState:{errors},reset,handleSubmit} = useForm<signupType>();
 
 
   const onSignup:SubmitHandler<signupType> = (data)=>{
-    console.log(data);
+  userSignup.mutate(data);
 
     reset();
 
@@ -88,7 +90,7 @@ const Signup = () => {
 
             <div className="flex justify-between items-center mt-4">
               <p className="text-sm text-gray-600">
-                Already have an account? <a href="/login" className="text-blue-600 hover:underline">Login</a>
+                Already have an account? <Link href="/login" className="text-blue-600 hover:underline">Login</Link>
               </p>
 
             </div>

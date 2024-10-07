@@ -5,6 +5,7 @@ import bookImage from "../../../assets/book.jpg";
 import Image from 'next/image';
 import {useForm,SubmitHandler} from "react-hook-form";
 import { loginType } from '../../../../types/Type';
+import Link from 'next/link';
 
 const Login = () => {
 
@@ -74,7 +75,7 @@ const Login = () => {
 
             <div className="flex justify-between items-center mt-4">
               <p className="text-sm text-gray-600">
-                Don't have an account? <a href="/signup" className="text-blue-600 hover:underline">Sign up</a>
+                Don&apos;t have an account? <Link href="/signup" className="text-blue-600 hover:underline">Sign up</Link>
               </p>
               <a href="/forgot-password" className="text-sm text-blue-600 hover:underline">Forgot Password?</a>
             </div>
