@@ -6,6 +6,7 @@ import { signupType } from "../../types/Type";
 import { useMutation } from "@tanstack/react-query";
 import Cookies from "js-cookie";
 
+
 const userRegister = async (signupData: signupType) => {
   try {
     const response = await axiosInstance.post(Signup, signupData);
@@ -26,11 +27,14 @@ export const UseUserSignup = () => {
     mutationKey: ["userSignup"],
     mutationFn: userRegister,
     onSuccess: (data) => {
-      const token = data?.token;
+        console.log(data);
+      const token = data?.accessToken;
+      const userId = data?.id
 
       Cookies.set("token", token);
+      Cookies.set('userId',userId)
 
-      console.log("Signup successful");
+      console.log();
     },
     onError: (err) => {
       console.log(err.message);
