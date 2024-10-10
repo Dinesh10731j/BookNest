@@ -27,14 +27,12 @@ export const UseUserSignup = () => {
     mutationKey: ["userSignup"],
     mutationFn: userRegister,
     onSuccess: (data) => {
-        console.log(data);
+        
       const token = data?.accessToken;
       const userId = data?.id
 
       Cookies.set("token", token);
-      Cookies.set('userId',userId)
-
-      console.log();
+      Cookies.set('userId',userId);
     },
     onError: (err) => {
       console.log(err.message);
