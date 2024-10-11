@@ -3,7 +3,8 @@ const nextConfig = {
 images:{
     remotePatterns:[{
         protocol:'https',
-        hostname:'covers.openlibrary.org'
+        hostname:'res.cloudinary.com',
+        pathname:'/**'
     }]
 }
 

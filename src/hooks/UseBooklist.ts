@@ -22,8 +22,8 @@ export const UseBookLists = () => {
   return useQuery({
     queryKey: ["bookLists"],
     queryFn: BookList,
-    staleTime: 100,
-    refetchInterval: 100,
+    staleTime: 1000,
+    refetchInterval: 1000,
     refetchOnMount: "always",
     refetchOnWindowFocus: "always",
   });
