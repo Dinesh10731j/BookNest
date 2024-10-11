@@ -2,8 +2,10 @@ import React from 'react';
 import { bookInfo } from '../../utils/bookInfo';
 import Image from 'next/image';
 import Link from 'next/link';
-
+import { UseBookLists } from '@/hooks/UseBooklist';
 const BookList = () => {
+  const bookLists = UseBookLists();
+  console.log(bookLists?.data);
   return (
 
     <>
