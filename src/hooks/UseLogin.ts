@@ -4,8 +4,9 @@ import axiosInstance from "../../config/axiosInstance";
 import { loginType } from "../../types/Type";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
+import Cookies from "js-cookie";
 
-const Login = async (logindata: loginType): Promise<loginType> => {
+const Login = async (logindata: loginType)=> {
   try {
     const response = await axiosInstance.post(loginEndpoint, logindata);
     return response.data;
@@ -24,8 +25,11 @@ export const UseUserLogin = () => {
   return useMutation({
     mutationKey: ["userLogin"],
     mutationFn: Login,
-    onSuccess: () => {
+    onSuccess: (data) => {
+      const token = data?.accessToken;
+     Cookies.set("token",token);
       console.log("Login Successfull");
+
     },
     onError: (err) => {
       console.log(err.message);

@@ -1,12 +1,15 @@
-import axios from "axios";
-import axiosInstance from "../../config/axiosInstance";
-import { Endpoints } from "../../config/endpoints";
-const { Booklists } = Endpoints;
-import { useQuery } from "@tanstack/react-query";
 
-const BookList = async () => {
+import { Endpoints } from "../../config/endpoints";
+const { SingleBook } = Endpoints;
+import axiosInstance from "../../config/axiosInstance";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+
+
+
+const singleBook = async ({ params }: {params:{bookId:string} }) => {
   try {
-    const response = await axiosInstance.get(Booklists);
+    const response = await axiosInstance.get(`${SingleBook}/${params.bookId}`);
     return response.data;
   } catch (error: unknown) {
     if (axios.isAxiosError(error)) {
@@ -18,13 +21,11 @@ const BookList = async () => {
     }
   }
 };
-export const UseBookLists = () => {
+
+export const UseSingleBook = (bookId: string) => {
   return useQuery({
-    queryKey: ["bookLists"],
-    queryFn: BookList,
-    staleTime: 1000,
-    refetchInterval: 1000,
-    refetchOnMount: "always",
-    refetchOnWindowFocus: "always",
+    queryKey: ["singleBook"],
+    queryFn: () => singleBook({ params: { bookId } }),
+   
   });
 };
