@@ -34,3 +34,8 @@ export interface bookListType{
     createdAt: string; 
     updatedAt: string;
 }
+
+
+export interface userIdType{
+    userId:string
+}
