@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 
 
 const axiosInstance = axios.create({
-  baseURL: 'http://localhost:2024',
+  baseURL: 'https://booknest-api-1.onrender.com',
   headers: {
     'Content-Type': 'application/json',
   },

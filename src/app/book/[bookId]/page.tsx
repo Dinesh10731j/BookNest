@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { UseSingleBook } from "@/hooks/UsegetSingleBook"; // Ensure the import path is correct
+import { UseSingleBook } from "@/hooks/UsegetSingleBook"; 
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import Header from "@/components/Header";
